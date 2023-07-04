@@ -1,5 +1,4 @@
 package com.example.datn.controller;
 
-public class HoaDonController {
-
+public class NhanVienController {
 }
