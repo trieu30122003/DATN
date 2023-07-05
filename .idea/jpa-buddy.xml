@@ -3,5 +3,13 @@
   <component name="JpaBuddyIdeaProjectConfig">
     <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="5caa0d89-a89d-451b-ba13-404b895594ac" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/com/example/datn/model" />
+    <reUseDbSnapshotConnections>
+      <dbConnection id="5caa0d89-a89d-451b-ba13-404b895594ac" />
+    </reUseDbSnapshotConnections>
+    <option name="reIgnoreSlowDbConnections">
+      <ignoreDs id="5caa0d89-a89d-451b-ba13-404b895594ac" />
+    </option>
   </component>
 </project>
