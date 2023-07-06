@@ -39,7 +39,6 @@ public class KhachHangController {
         if(kh == null) {
             return ResponseEntity.notFound().build();
         }
-
         khachHangService.delete(id);
         return ResponseEntity.ok().build();
     }
