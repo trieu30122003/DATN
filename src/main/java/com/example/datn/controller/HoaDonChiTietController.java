@@ -29,17 +29,17 @@ public class HoaDonChiTietController {
     @RequestMapping(value = "/new/", method = RequestMethod.GET)
     public ResponseEntity<List<HoaDonCt>> listAllContact(){
         List<HoaDonCt> list= hoaDonChitietService.getAll();
-       /* if(list.isEmpty()) {
+        if(list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }*/
+        }
         List<SanPhamCt> list1= chiTietSanPhamService.getAll();
-       /* if(list.isEmpty()) {
+        if(list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }*/
+        }
         List<HoaDon> list2= hoaDonService.getAll();
-       /* if(list.isEmpty()) {
+        if(list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
-        }*/
+        }
         return new ResponseEntity<List<HoaDonCt>>(list, HttpStatus.OK);
     }
 }

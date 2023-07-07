@@ -17,11 +17,11 @@ public class HoaDonCt {
     @Column(name = "Id", nullable = false)
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_ctsp")
     private SanPhamCt idCtsp;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_hoa_don")
     private HoaDon idHoaDon;
 

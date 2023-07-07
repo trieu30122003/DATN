@@ -21,7 +21,7 @@ public class KhachHangController {
     @Autowired
     KhachHangService khachHangService;
     @RequestMapping(value = "/new/", method = RequestMethod.GET)
-    public ResponseEntity<List<KhachHang>> listAllContact(){
+    public ResponseEntity<List<KhachHang>> listAll(){
         List<KhachHang> list= khachHangService.getAll();
         if(list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
@@ -30,15 +30,11 @@ public class KhachHangController {
         return new ResponseEntity<List<KhachHang>>(list, HttpStatus.OK);
     }
     @RequestMapping(value = "/new/", method = RequestMethod.POST)
-    public void saveContact(@Valid @RequestBody KhachHang khachHang) {
+    public void save(@Valid @RequestBody KhachHang khachHang) {
          khachHangService.add(khachHang);
     }
     @RequestMapping(value = "/new/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<KhachHang> deleteContact(@PathVariable(value = "id") UUID id) {
-        KhachHang kh = khachHangService.getOne(id);
-        if(kh == null) {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<KhachHang> delete(@PathVariable(value = "id") UUID id) {
         khachHangService.delete(id);
         return ResponseEntity.ok().build();
     }
