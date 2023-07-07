@@ -21,8 +21,8 @@ public class KhachHangServiceImpl implements KhachHangService{
     }
 
     @Override
-    public void add(KhachHang khachHang) {
-        khachHangRepository.save(khachHang);
+    public KhachHang add(KhachHang khachHang) {
+        return khachHangRepository.save(khachHang);
     }
 
     @Override
