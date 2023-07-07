@@ -31,27 +31,27 @@ public class SanPhamCt {
     @Column(name = "gia_ban", precision = 18)
     private BigDecimal giaBan;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_loai")
     private Loai idLoai;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_nsx")
     private Nsx idNsx;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_mau_sac")
     private MauSac idMauSac;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_san_pham")
     private SanPham idSanPham;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_man_hinh")
     private ManHinh idManHinh;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_day_deo")
     private DayDeo idDayDeo;
 

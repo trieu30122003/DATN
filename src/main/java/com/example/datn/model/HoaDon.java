@@ -61,11 +61,11 @@ public class HoaDon {
     @Column(name = "thanh_tien", precision = 18)
     private BigDecimal thanhTien;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_nhan_vien")
     private NhanVien idNhanVien;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_phuong_thuc_thanh_toan")
     private PhuongThucThanhToan idPhuongThucThanhToan;
 

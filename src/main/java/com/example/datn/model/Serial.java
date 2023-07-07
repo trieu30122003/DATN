@@ -22,7 +22,7 @@ public class Serial {
     @Column(name = "ma_seri", length = 20)
     private String maSeri;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_ctsp")
     private SanPhamCt idCtsp;
 

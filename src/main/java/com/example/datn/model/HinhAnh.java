@@ -23,7 +23,7 @@ public class HinhAnh {
     @Column(name = "link_anh", length = 50)
     private String linkAnh;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_ctsp")
     private SanPhamCt idCtsp;
 

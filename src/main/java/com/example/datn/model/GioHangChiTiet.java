@@ -12,11 +12,11 @@ import java.math.BigDecimal;
 @Table(name = "gio_hang_ct")
 public class GioHangChiTiet {
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_ctsp")
     private SanPhamCt idCtsp;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_gio_hang")
     private GioHang idGioHang;
 

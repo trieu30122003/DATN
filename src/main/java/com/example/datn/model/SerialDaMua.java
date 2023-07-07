@@ -18,7 +18,7 @@ public class SerialDaMua {
     @Column(name = "Id", nullable = false)
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_hoa_don_ct")
     private HoaDonCt idHoaDonCt;
 

@@ -17,11 +17,11 @@ public class VoucherCt {
     @Column(name = "Id", nullable = false)
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_voucher")
     private Voucher idVoucher;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_hoa_don")
     private HoaDon idHoaDon;
 
