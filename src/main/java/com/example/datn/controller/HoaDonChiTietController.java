@@ -7,14 +7,18 @@ import com.example.datn.model.SanPhamCt;
 import com.example.datn.service.ChiTietSanPhamService;
 import com.example.datn.service.HoaDonChitietService;
 import com.example.datn.service.HoaDonService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/hdct")
@@ -41,5 +45,14 @@ public class HoaDonChiTietController {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<HoaDonCt>>(list, HttpStatus.OK);
+    }
+    @RequestMapping(value = "/new/", method = RequestMethod.POST)
+    public void saveContact(@Valid @RequestBody HoaDonCt hdct) {
+        hoaDonChitietService.add(hdct);
+    }
+    @RequestMapping(value = "/new/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<HoaDonCt> deleteContact(@PathVariable(value = "id") UUID id) {
+        hoaDonChitietService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }
