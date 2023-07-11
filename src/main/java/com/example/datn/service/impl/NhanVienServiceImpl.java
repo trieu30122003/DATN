@@ -22,9 +22,10 @@ public class NhanVienServiceImpl implements NhanVienService {
     }
 
     @Override
-    public void add(NhanVien nhanVien) {
-        nhanVienRepository.save(nhanVien);
+    public NhanVien add(NhanVien nhanVien) {
+        return nhanVienRepository.save(nhanVien);
     }
+
 
     @Override
     public NhanVien getOne(UUID id) {

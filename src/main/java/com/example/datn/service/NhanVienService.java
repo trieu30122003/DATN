@@ -8,7 +8,10 @@ import java.util.UUID;
 
 public interface NhanVienService {
     List<NhanVien> getAll();
-    void add(NhanVien nhanVien);
+
+    NhanVien add(NhanVien nhanVien);
+
     NhanVien getOne(UUID id);
+
     void delete(UUID id);
 }
