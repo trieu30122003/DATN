@@ -7,14 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 
+@CrossOrigin(origins = "http://localhost:3000/")
 @Controller
 @RequestMapping("/khach-hang")
 public class KhachHangController {
@@ -49,7 +47,7 @@ public class KhachHangController {
         return kh;
     }
 
-    @RequestMapping(value = "/new/", method = RequestMethod.PUT)
+    @RequestMapping(value = "/new/{id}", method = RequestMethod.PUT)
     public ResponseEntity<KhachHang> updateContact(@PathVariable(value = "id") UUID id,
                                                    @Valid @RequestBody KhachHang contactForm) {
         KhachHang kh = khachHangService.getOne(id);
