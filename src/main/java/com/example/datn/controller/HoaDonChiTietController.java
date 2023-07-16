@@ -27,7 +27,7 @@ public class HoaDonChiTietController {
     @Autowired
     HoaDonChitietService hoaDonChitietService;
 
-    @RequestMapping(value = "/new/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hien-thi/", method = RequestMethod.GET)
     public ResponseEntity<List<HoaDonCt>> listAllContact(){
         List<HoaDonCt> list= hoaDonChitietService.getAll();
         if(list.isEmpty()) {
