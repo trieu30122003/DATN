@@ -24,8 +24,8 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     }
 
     @Override
-    public void add(SanPhamCt spct) {
-        chitietSanPhamRepository.save(spct);
+    public SanPhamCt add(SanPhamCt spct) {
+        return chitietSanPhamRepository.save(spct);
     }
 
     @Override
