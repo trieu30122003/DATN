@@ -16,7 +16,7 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/khach-hang")
 public class KhachHangController {
-    @Autowired
+    @Autowired  
     KhachHangService khachHangService;
 
     @RequestMapping(value = "/new/", method = RequestMethod.GET)
