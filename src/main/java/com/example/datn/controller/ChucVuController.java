@@ -35,6 +35,8 @@ public class ChucVuController {
         return chucVuService.add(chucVu);
     }
 
+
+
     @RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
     public ChucVu find(@PathVariable("id") UUID id) {
         ChucVu cv = chucVuService.getOne(id);
@@ -46,7 +48,7 @@ public class ChucVuController {
 
     @RequestMapping(value = "/new/", method = RequestMethod.PUT)
     public ResponseEntity<ChucVu> updateContact(@PathVariable(value = "id") UUID id,
-                                                   @Valid @RequestBody ChucVu contactForm) {
+                                                @Valid @RequestBody ChucVu contactForm) {
         ChucVu cv = chucVuService.getOne(id);
         if (cv == null) {
             return ResponseEntity.notFound().build();

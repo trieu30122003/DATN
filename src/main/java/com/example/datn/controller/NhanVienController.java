@@ -3,6 +3,7 @@ package com.example.datn.controller;
 import com.example.datn.model.ChucVu;
 import com.example.datn.model.KhachHang;
 import com.example.datn.model.NhanVien;
+import com.example.datn.service.ChucVuService;
 import com.example.datn.service.NhanVienService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,16 @@ import java.util.UUID;
 public class NhanVienController {
     @Autowired
     NhanVienService nhanVienService;
+    @Autowired
+    ChucVuService chucVuService;
+
     @RequestMapping(value = "/new/", method = RequestMethod.GET)
     public ResponseEntity<List<NhanVien>> listAll() {
         List<NhanVien> list = nhanVienService.getAll();
+        if (list.isEmpty()) {
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+        List<ChucVu> cv = chucVuService.getAll();
         if (list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
