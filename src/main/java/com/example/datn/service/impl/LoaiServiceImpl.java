@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 @Service
 public class LoaiServiceImpl implements LoaiService {
     @Autowired
@@ -15,5 +17,20 @@ public class LoaiServiceImpl implements LoaiService {
     @Override
     public ArrayList<Loai> getAll() {
         return (ArrayList<Loai>) loaiRepository.findAll();
+    }
+
+    @Override
+    public void delete(UUID id) {
+
+    }
+
+    @Override
+    public Loai add(Loai loai) {
+        return null;
+    }
+
+    @Override
+    public Loai detail(UUID id) {
+        return null;
     }
 }

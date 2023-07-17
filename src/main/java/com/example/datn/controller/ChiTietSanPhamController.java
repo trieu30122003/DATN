@@ -73,7 +73,7 @@ public class ChiTietSanPhamController {
     public SanPhamCt saveContact(@Valid @RequestBody SanPhamCt spct) {
        return ctspServiceIpml.add(spct);
     }
-    @RequestMapping(value = "/new/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<SanPhamCt> deleteContact(@PathVariable(value = "id") UUID id) {
         ctspServiceIpml.delete(id);
         return ResponseEntity.ok().build();
