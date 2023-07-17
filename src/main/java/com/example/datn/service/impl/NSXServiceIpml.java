@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
 @Service
 public class NSXServiceIpml implements NSXService {
     @Autowired
@@ -15,5 +17,20 @@ public class NSXServiceIpml implements NSXService {
     @Override
     public ArrayList<Nsx> getAll() {
         return (ArrayList<Nsx>) nsxRepository.findAll();
+    }
+
+    @Override
+    public void delete(UUID id) {
+
+    }
+
+    @Override
+    public Nsx add(Nsx nsx) {
+        return null;
+    }
+
+    @Override
+    public Nsx detail(UUID id) {
+        return null;
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.UUID;
+
 @Service
 public class MauSacServiceIpml implements MauSacService {
     @Autowired
@@ -15,5 +17,20 @@ public class MauSacServiceIpml implements MauSacService {
     @Override
     public ArrayList<MauSac> getAll() {
         return (ArrayList<MauSac>) mauSacRepository.findAll();
+    }
+
+    @Override
+    public void delete(UUID id) {
+
+    }
+
+    @Override
+    public MauSac add(MauSac ms) {
+        return null;
+    }
+
+    @Override
+    public MauSac detail(UUID id) {
+        return null;
     }
 }

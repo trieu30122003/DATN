@@ -1,8 +1,6 @@
 package com.example.datn.controller;
 
-import com.example.datn.model.ManHinh;
 import com.example.datn.model.MauSac;
-import com.example.datn.service.impl.ManHinhServiceImpl;
 import com.example.datn.service.impl.MauSacServiceIpml;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
