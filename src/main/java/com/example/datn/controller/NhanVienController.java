@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
+@CrossOrigin(origins = "http://localhost:3000/")
 @Controller
 @RequestMapping("/nhan-vien")
 public class NhanVienController {
@@ -33,11 +34,6 @@ public class NhanVienController {
         return nhanVienService.add(nhanVien);
     }
 
-    //    @RequestMapping(value = "/new/{id}", method = RequestMethod.DELETE)
-//    public ResponseEntity<KhachHang> delete(@PathVariable(value = "id") UUID id) {
-//        khachHangService.delete(id);
-//        return ResponseEntity.ok().build();
-//    }
     @RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
     public NhanVien find(@PathVariable("id") UUID id) {
         NhanVien nv = nhanVienService.getOne(id);

@@ -12,14 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
-
+@CrossOrigin(origins = "http://localhost:3000/")
 @Controller
 @RequestMapping("/hdct")
 public class HoaDonChiTietController {
@@ -30,7 +27,7 @@ public class HoaDonChiTietController {
     @Autowired
     HoaDonChitietService hoaDonChitietService;
 
-    @RequestMapping(value = "/new/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hien-thi/", method = RequestMethod.GET)
     public ResponseEntity<List<HoaDonCt>> listAllContact(){
         List<HoaDonCt> list= hoaDonChitietService.getAll();
         if(list.isEmpty()) {
