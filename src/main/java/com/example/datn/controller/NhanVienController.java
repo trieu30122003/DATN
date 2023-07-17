@@ -1,5 +1,6 @@
 package com.example.datn.controller;
 
+import com.example.datn.model.ChucVu;
 import com.example.datn.model.KhachHang;
 import com.example.datn.model.NhanVien;
 import com.example.datn.service.NhanVienService;
@@ -19,7 +20,6 @@ import java.util.UUID;
 public class NhanVienController {
     @Autowired
     NhanVienService nhanVienService;
-
     @RequestMapping(value = "/new/", method = RequestMethod.GET)
     public ResponseEntity<List<NhanVien>> listAll() {
         List<NhanVien> list = nhanVienService.getAll();
