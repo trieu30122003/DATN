@@ -11,7 +11,7 @@ public interface NhanVienService {
 
     NhanVien add(NhanVien nhanVien);
 
-    NhanVien getOne(UUID id);
+    NhanVien getOne(UUID id) throws Exception;
 
     void delete(UUID id);
 }

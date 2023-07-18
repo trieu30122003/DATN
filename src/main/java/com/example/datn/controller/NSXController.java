@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/nsx")
+@RequestMapping("/api/nsx")
 @CrossOrigin(origins = "http://localhost:3000/")
 public class NSXController {
     @Autowired
     NSXServiceIpml nsxServiceIpml;
-    @RequestMapping(value = "/hien-thi/", method = RequestMethod.GET)
+    @RequestMapping( value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<Nsx>> listAll() {
         List<Nsx> list = nsxServiceIpml.getAll();
         if (list.isEmpty()) {
@@ -29,11 +29,11 @@ public class NSXController {
         return new ResponseEntity<List<Nsx>>(list, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/add/", method = RequestMethod.POST)
-    public Nsx save(@Valid @RequestBody Nsx mh) {
-        return nsxServiceIpml.add(mh);
+    @PostMapping( "/all")
+    public Nsx save(@Valid @RequestBody Nsx nsx) {
+        return nsxServiceIpml.add(nsx);
     }
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/all/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Nsx> deleteContact(@PathVariable(value = "id") UUID id) {
         nsxServiceIpml.delete(id);
         return ResponseEntity.ok().build();

@@ -61,7 +61,7 @@ public class NhanVien {
     @Column(name = "mat_khau", length = 50)
     private String matKhau;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "id_chuc_vu")
     private ChucVu idChucVu;
 

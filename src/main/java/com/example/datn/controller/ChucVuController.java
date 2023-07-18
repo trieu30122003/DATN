@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @CrossOrigin(origins = "http://localhost:3000/")
-@Controller
+@RestController
 @RequestMapping("/chuc-vu")
 public class ChucVuController {
     @Autowired

@@ -26,7 +26,7 @@ public class NSXServiceIpml implements NSXService {
 
     @Override
     public Nsx add(Nsx nsx) {
-        return null;
+        return nsxRepository.save(nsx);
     }
 
     @Override

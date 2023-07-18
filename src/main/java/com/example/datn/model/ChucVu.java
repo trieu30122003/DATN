@@ -5,14 +5,16 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
+import org.yaml.snakeyaml.serializer.Serializer;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "chuc_vu")
-public class ChucVu {
+public class ChucVu{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id", nullable = false)
