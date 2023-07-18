@@ -1,10 +1,12 @@
 package com.example.datn.controller;
 
 import com.example.datn.model.ChucVu;
+import com.example.datn.model.DayDeo;
 import com.example.datn.model.KhachHang;
 import com.example.datn.model.NhanVien;
 import com.example.datn.service.ChucVuService;
 import com.example.datn.service.NhanVienService;
+import com.example.datn.service.impl.ChucVuServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,8 +32,7 @@ public class NhanVienController {
         if (list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
-        List<ChucVu> cv = chucVuService.getAll();
-        if (list.isEmpty()) {
+        if(list.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<NhanVien>>(list, HttpStatus.OK);
@@ -43,7 +44,7 @@ public class NhanVienController {
     }
 
     @RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
-    public NhanVien find(@PathVariable("id") UUID id) {
+    public NhanVien find(@PathVariable("id") UUID id) throws Exception {
         NhanVien nv = nhanVienService.getOne(id);
         if (nv == null) {
             ResponseEntity.notFound().build();
@@ -53,7 +54,7 @@ public class NhanVienController {
 
     @RequestMapping(value = "/new/", method = RequestMethod.PUT)
     public ResponseEntity<NhanVien> updateContact(@PathVariable(value = "id") UUID id,
-                                                   @Valid @RequestBody NhanVien contactForm) {
+                                                   @Valid @RequestBody NhanVien contactForm) throws Exception {
         NhanVien nv = nhanVienService.getOne(id);
         if (nv == null) {
             return ResponseEntity.notFound().build();

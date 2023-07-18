@@ -28,8 +28,8 @@ public class NhanVienServiceImpl implements NhanVienService {
 
 
     @Override
-    public NhanVien getOne(UUID id) {
-        return nhanVienRepository.findById(id).get();
+    public NhanVien getOne(UUID id) throws Exception {
+        return nhanVienRepository.findById(id).orElseThrow(() -> new Exception("id not found"));
     }
 
     @Override
