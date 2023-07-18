@@ -14,7 +14,7 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "voucher")
-public class Voucher {
+public class  Voucher {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "Id", nullable = false)
