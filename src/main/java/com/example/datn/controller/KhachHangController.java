@@ -39,12 +39,12 @@ public class KhachHangController {
 //        return ResponseEntity.ok().build();
 //    }
     @RequestMapping(value = "/new/{id}", method = RequestMethod.GET)
-    public KhachHang find(@PathVariable("id") UUID id) {
+    public ResponseEntity<KhachHang> find(@PathVariable("id") UUID id) {
         KhachHang kh = khachHangService.getOne(id);
         if (kh == null) {
             ResponseEntity.notFound().build();
         }
-        return kh;
+        return ResponseEntity.ok(kh);
     }
 
     @RequestMapping(value = "/new/{id}", method = RequestMethod.PUT)
