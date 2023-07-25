@@ -21,12 +21,12 @@ public class MauSacServiceIpml implements MauSacService {
 
     @Override
     public void delete(UUID id) {
-
+        mauSacRepository.deleteById(id);
     }
 
     @Override
     public MauSac add(MauSac ms) {
-        return null;
+        return mauSacRepository.save(ms);
     }
 
     @Override

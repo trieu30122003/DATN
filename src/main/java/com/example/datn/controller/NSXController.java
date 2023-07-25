@@ -30,7 +30,7 @@ public class NSXController {
     }
 
     @PostMapping( "/all")
-    public Nsx save(@Valid @RequestBody Nsx nsx) {
+    public Nsx save(@RequestBody Nsx nsx) {
         return nsxServiceIpml.add(nsx);
     }
     @RequestMapping(value = "/all/{id}", method = RequestMethod.DELETE)
@@ -38,4 +38,5 @@ public class NSXController {
         nsxServiceIpml.delete(id);
         return ResponseEntity.ok().build();
     }
+
 }

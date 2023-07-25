@@ -24,12 +24,12 @@ public class ChiTietSanPhamServiceImpl implements ChiTietSanPhamService {
     }
 
     @Override
-    public SanPhamCt add(SanPhamCt spct) {
-        return chitietSanPhamRepository.save(spct);
+    public SanPhamCt add(SanPhamCt ctsp) {
+        return chitietSanPhamRepository.save(ctsp);
     }
 
     @Override
     public SanPhamCt detail(UUID id) {
-        return null;
+        return chitietSanPhamRepository.findById(id).get();
     }
 }

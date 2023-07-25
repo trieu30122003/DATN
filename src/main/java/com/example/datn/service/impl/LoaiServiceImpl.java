@@ -26,7 +26,7 @@ public class LoaiServiceImpl implements LoaiService {
 
     @Override
     public Loai add(Loai loai) {
-        return null;
+        return loaiRepository.save(loai);
     }
 
     @Override

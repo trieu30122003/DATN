@@ -17,7 +17,7 @@ import java.util.UUID;
 public class MauSacController {
     @Autowired
     MauSacServiceIpml mauSacServiceIpml;
-    @RequestMapping(value = "/hien-thi/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hien-thi", method = RequestMethod.GET)
     public ResponseEntity<List<MauSac>> listAll() {
         List<MauSac> list = mauSacServiceIpml.getAll();
         if (list.isEmpty()) {
@@ -26,11 +26,11 @@ public class MauSacController {
         return new ResponseEntity<List<MauSac>>(list, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/add/", method = RequestMethod.POST)
-    public MauSac save(@Valid @RequestBody MauSac mh) {
+    @PostMapping("/hien-thi")
+    public MauSac save(@RequestBody MauSac mh) {
         return mauSacServiceIpml.add(mh);
     }
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/hien-thi/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<MauSac> deleteContact(@PathVariable(value = "id") UUID id) {
         mauSacServiceIpml.delete(id);
         return ResponseEntity.ok().build();

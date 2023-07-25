@@ -21,7 +21,7 @@ public class NSXServiceIpml implements NSXService {
 
     @Override
     public void delete(UUID id) {
-
+        nsxRepository.deleteById(id);
     }
 
     @Override
@@ -31,6 +31,6 @@ public class NSXServiceIpml implements NSXService {
 
     @Override
     public Nsx detail(UUID id) {
-        return null;
+        return nsxRepository.findById(id).get();
     }
 }
